@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/standard.css">
+    <script data-search-pseudo-elements defer src="https://kit.fontawesome.com/52eb7513f8.js" crossorigin="anonymous"></script>
+    <title>Landing Page</title>
+    <!-- <script src="scripts/loginScripts.js" defer></script> -->
+    <script src="scripts/registerAuthScripts.js" defer></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h1>Igloo
+                <div class="snippet" data-title=".dot-flashing">
+                    <div class="stage">
+                      <div class="dot-flashing"></div>
+                    </div>
+                  </div>
+            </h1>
+            <p>online video chat</p>
+            
+           <div class="socialmedia">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+           </div>
+        </div>
+        <div class="linksContainer right">
+            <div class="menu">
+                <ul>
+                    <li><a href="/about-us">About</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="registerForm">
+                <h2>Register</h2>  
+                <!-- <form action="/newRoom" method="post" name="form" id="form"> -->
+                <form action="/register" method="post" name="registerForm" id="registerForm">
+                    
+                    <div class="registerArea"> <input placeholder="* Your name" type="text" name="name" id="name" value="<%= name %>"></div>
+                    <div class="registerArea"> <input placeholder="* email" type="email" name="email" id="email" value="<%= email %>"></div>
+                    <div class="registerArea"> <input placeholder="* password" type="password" name="password" id="password" value="<%= password %>"></div>
+                    <div id="errorMessage" class="redText"></div>
+                    <div><input type="submit" value="Register" id="registerButton"></div>
+                    
+                </form>
+            </div>
+            
+
+            
+            <p class="registerText">If you have an account, please <a href="/login">Login</a>.</p>
+            
+ 
+        </div>
+    </div>
+</body>
+</html>

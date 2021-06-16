@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/standard.css">
+    <script data-search-pseudo-elements defer src="https://kit.fontawesome.com/52eb7513f8.js" crossorigin="anonymous"></script>
+    <title>Landing Page</title>
+    <script src="scripts/indexScripts.js" defer></script>
+
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h1>Igloo
+                <div class="snippet" data-title=".dot-flashing">
+                    <div class="stage">
+                      <div class="dot-flashing"></div>
+                    </div>
+                  </div>
+            </h1>
+            <p>online video chat</p>
+            
+           <div class="socialmedia">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+           </div>
+        </div>
+        <div class="linksContainer right">
+            <div class="menu">
+                <ul>
+                    <li><a href="/about-us">About</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </div>
+            
+                <div class="form">
+                    <form action="/newRoom" method="post" name="form" id="form">
+                        <div class="area"> <input type="text" name="name" id="name" value="<%= username %>" readonly></div>
+                        <div><input type="submit" value="Create new room" id="submitButton"></div>
+                    </form>
+                </div>
+        
+            
+            <!-- Please comment out from before when you test -->
+            <!-- <div class="loginForm">
+                <h2>Login</h2>  
+                <form action="/loginauth" method="post" name="form" id="form">
+                    <div class="loginArea"> <input placeholder="your email" type="email" name="email" id="email"></div>
+                    <div class="loginArea"> <input placeholder="your password" type="password" name="password" id="password"></div>
+                    <div><input type="submit" value="Login" id="submitButton"></div>
+                </form>
+            </div> -->
+            
+            <!-- <p class="loginText">If you don't have an account, please <a href="/register">Create an account</a>.</p> -->
+            
+        </div>
+    </div>
+</body>
+</html>

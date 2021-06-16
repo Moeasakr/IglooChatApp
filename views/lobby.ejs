@@ -1,0 +1,47 @@
+<%- include('partials/top.ejs') %> 
+
+<!-- SOCKET IO CDN -->
+<!--     <script src="https://cdn.socket.io/4.1.1/socket.io.min.js" integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a" crossorigin="anonymous"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="socket.io/socket.io.js"></script>    
+<script defer src="scripts/textchat.js"></script>
+
+<main class="lobby">
+    <div class="side_nav_div">
+       
+            <h4>Igloo</h4>
+            <ul class="text_chat_users_list"></ul>
+
+            <div class="disconnect_bun_div">
+                <button type="button" class="text_chat_leave_btn">Leave Chat Room</button>
+            </div>
+    </div>
+    <div class="text_chat_div">
+        <div>
+            <h4 class="text_chat_div_heading">Text chat div</h4>
+            
+        </div>
+        <div class="text_chat_interface_div">
+            <div class="text_chat_message_div">
+                <h3>Chat</h3>
+            </div>
+            <div class="text_chat_input_div">
+                <form>
+                    <input class="text_chat_input_field" type="text" />
+                    <button class="text_chat_submit_btn" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="video_chat_div">
+        <h2>Video conference div</h2>
+        <div class="control_div">
+        </div>
+    </div>
+</main>
+
+<%- include('partials/bottom.ejs') %> 

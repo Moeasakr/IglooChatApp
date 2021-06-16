@@ -1,0 +1,159 @@
+<%- include('partials/top.ejs') %>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/standard.css">
+<script>
+  const ROOM_ID = "<%- roomId -%>";
+  var username = "<%- username -%>";
+</script>
+<script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+<script src="/socket.io/socket.io.js" defer></script>
+<script src="scripts/roomScripts.js" defer></script>
+<script src="https://kit.fontawesome.com/ba57f7a475.js" crossorigin="anonymous"></script>
+<main class="lobby">
+  <div class="side_nav_div">
+    <h1>Igloo</h1>
+    <ul class="text_chat_users_list"></ul>
+
+    <!-- <div class="disconnect_bun_div">
+      <button type="button" class="text_chat_leave_btn">Leave Chat Room</button>
+    </div> -->
+  </div>
+
+
+  <div id="chat" class="text_chat_div">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div>
+      <h2 class="text_chat_div_heading">Chat</h2>
+
+    </div>
+    <div class="text_chat_interface_div">
+      <div class="text_chat_message_div">
+        <!-- <h3>Chat</h3> -->
+      </div>
+      <div class="text_chat_input_div">
+        <form>
+          <input class="text_chat_input_field" type="text" />
+          <button class="text_chat_submit_btn" type="submit"><i class="fa fa-paper-plane"
+              aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--if you need name from login -->
+  <!--<div class="username" id="result-name"></div> -->
+  <div id="video" class="video_chat_div">
+    
+  
+    <button class="openbtn" onclick="openNav()"><i class="fas fa-comment"></i></button> 
+    <!-- <h2>Video conference div</h2> -->
+    <div class="control_div">
+      <div class="layout">
+        <input type="radio" name="radio" id="multi" class="c-radio" checked="checked" value="multi">
+        <label for="multi" class="btn__multi label">multi</label>
+
+        <input type="radio" name="radio" id="single" class="c-radio" value="single">
+        <label for="single" class="btn__single label">single</label>
+        
+        <!-- Mailing temp location-->
+        <form name="inviteForm" class="inviteForm">
+          <input type="text" id="emailField" />
+          <button type="submit">Send invite</button>
+        </form>
+        <!-- Video options -->
+        <span id="videoButton" class="fas fa-video-slash"></span>
+        <span id="muteButton" class="fas fa-microphone-slash"></span>
+        <!-- Volume slider -->
+        <input type="range" min="0" max="100" value="100" id="volumeControl">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div id="video-grid"></div>
+  <div id="messagingContainer">
+    <div id="message-container"></div>
+    <form id="send-container">
+      <input type="text" id="message-input">
+      <button type="submit" id="send-button">Send</button>
+    </form>
+  </div>
+  <div id="userContainer"></div> -->
+</main>
+
+<script>
+
+
+  window.addEventListener('load', () => {
+   const name = sessionStorage.getItem('NAME');
+  //  document.getElementById('result-name').innerHTML = name;
+  })
+
+
+  /* Chat area expand and close */
+  function openNav() {
+    document.getElementById("chat").style.width = "35%";
+    document.getElementById("video").style.marginLeft = "35%";
+    document.getElementById("video").style.width = "45%";
+  }
+  
+  function closeNav() {
+    document.getElementById("chat").style.width = "0";
+    document.getElementById("video").style.width = "80%";
+    document.getElementById("video").style.marginLeft= "0";
+  }
+
+
+ 
+ var checkOption = document.getElementsByName('radio');
+
+ 
+ checkOption.forEach(function(e) {
+     e.addEventListener("click", function() {           
+         console.log(document.querySelector("input:checked[name=radio]").value);
+         var value = document.querySelector("input:checked[name=radio]").value
+         var length = document.getElementsByTagName("video").length;
+         if(value == "single"){
+
+      
+          document.querySelector(".video:first-of-type").style.width ="auto";
+          document.querySelector(".video:first-of-type").style.height ="80%";
+         
+          if(length > 1){
+            document.querySelector(".video:not(:first-of-type)").style.display ="none";
+          
+          }
+          
+          
+           
+         }else{
+          
+          if(length > 1){
+            document.querySelector(".video:not(:first-of-type)").style.display ="inline-block";
+          
+          }
+          
+          document.querySelector(".video").style.height ="40%";
+          document.querySelector(".video").style.width ="auto";
+
+          
+            
+          
+
+          // var length = document.getElementsByTagName("video").length;
+          // var videoHeight = 80 / length;
+          // console.log(videoHeight);
+          // document.querySelector(".video:not(:first-of-type)").style.display ="inline-block";
+          // document.querySelectorAll(".video").style.height = videoHeight + "%";
+          // document.querySelectorAll(".video").style.width = "auto";
+          
+         }
+     });
+ });
+
+
+
+
+  
+  </script>

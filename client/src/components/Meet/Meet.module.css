@@ -1,0 +1,19 @@
+.mainContainer{
+	display: flex;
+	width: 100%;
+}
+/* .sidebar{
+	width: 20%;
+	height: 100vh;
+}
+
+.chatboxContainer{
+	width: 30%;
+	height: 100vh;
+}
+
+.videoContainer{
+	width: 50%;
+	height: 100vh;
+	
+} */
