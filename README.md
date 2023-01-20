@@ -1,5 +1,7 @@
 # Igloo Video Conferencing App - Team 11 - Gordian Mok, Mihoko Schick, Shimeng Pan, Mohamad Sakr
 
+Project hosted at https://igloo.moeasakr.ca
+
 How to run the app:
 
 - Navigate to the root folder of the app, execute it in terminal with this command: "npm run dev"
